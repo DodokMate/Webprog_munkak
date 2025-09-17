@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vármegyék DOM</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 60%;
+        margin-top: 20px;
+    }
+
+    th,
+    td {
+        border: 1px solid #333;
+        padding: 8px;
+        text-align: center;
+    }
+
+    th {
+    }
+</style>
+
+<body>
+    <h1>Vármegyék</h1>
+    <button onclick="general()">Táblázat generálása</button>
+    <button onclick="sotetMod()">Sötét mód</button>
+    <button onclick="vilagosMod()">Világos mód</button>
+    <button onclick="kiemeles()">Kiemelés</button>
+    <div id="tablaHely"></div>
+
+    <script>
+        function general() {
+            let varmegyek = [
+                {
+                    varmegye: "Bács-Kiskun",
+                    szekhely: "Kecskemét",
+                    orszagresz: "Dél-Alföld",
+                    regio: "AF",
+                    terulet: 119,
+                    nepesseg: 503825,
+                    nepsuruseg: 8443,
+                    varosok: 59
+                },
+                {
+                    varmegye: "Baranya",
+                    szekhely: "Pécs",
+                    orszagresz: "Dél-Dunántúl",
+                    regio: "DT",
+                    terulet: 301,
+                    nepesseg: 360704,
+                    nepsuruseg: 4430,
+                    varosok: 81
+                },
+                {
+                    varmegye: "Békés",
+                    szekhely: "Békéscsaba",
+                    orszagresz: "Dél-Alföld",
+                    regio: "AF",
+                    terulet: 75,
+                    nepesseg: 334264,
+                    nepsuruseg: 5630,
+                    varosok: 59
+                },
+                {
+                    varmegye: "Borsod-Abaúj-Zemplén",
+                    szekhely: "Miskolc",
+                    orszagresz: "Észak-Magyarország",
+                    regio: "AF",
+                    terulet: 358,
+                    nepesseg: 642447,
+                    nepsuruseg: 7247,
+                    varosok: 88
+                },
+                {
+                    varmegye: "Csongrád-Csanád",
+                    szekhely: "Szeged",
+                    orszagresz: "Dél-Alföld",
+                    regio: "AF",
+                    terulet: 60,
+                    nepesseg: 399012,
+                    nepsuruseg: 4262,
+                    varosok: 93
+                },
+                {
+                    varmegye: "Fejér",
+                    szekhely: "Székesfehérvár",
+                    orszagresz: "Közép-Dunántúl",
+                    regio: "DT",
+                    terulet: 108,
+                    nepesseg: 417712,
+                    nepsuruseg: 4358,
+                    varosok: 95
+                },
+                {
+                    varmegye: "Győr-Moson-Sopron",
+                    szekhely: "Győr",
+                    orszagresz: "Nyugat-Dunántúl",
+                    regio: "DT",
+                    terulet: 183,
+                    nepesseg: 467144,
+                    nepsuruseg: 4208,
+                    varosok: 111
+                },
+                {
+                    varmegye: "Hajdú-Bihar",
+                    szekhely: "Debrecen",
+                    orszagresz: "Észak-Alföld",
+                    regio: "AF",
+                    terulet: 82,
+                    nepesseg: 527989,
+                    nepsuruseg: 6209,
+                    varosok: 85
+                },
+                {
+                    varmegye: "Heves",
+                    szekhely: "Eger",
+                    orszagresz: "Észak-Magyarország",
+                    regio: "AF",
+                    terulet: 121,
+                    nepesseg: 294609,
+                    nepsuruseg: 3637,
+                    varosok: 81
+                },
+                {
+                    varmegye: "Jász-Nagykun-Szolnok",
+                    szekhely: "Szolnok",
+                    orszagresz: "Észak-Alföld",
+                    regio: "AF",
+                    terulet: 78,
+                    nepesseg: 370007,
+                    nepsuruseg: 5581,
+                    varosok: 66
+                },
+                {
+                    varmegye: "Komárom-Esztergom",
+                    szekhely: "Tatabánya",
+                    orszagresz: "Közép-Dunántúl",
+                    regio: "DT",
+                    terulet: 76,
+                    nepesseg: 299207,
+                    nepsuruseg: 2264,
+                    varosok: 132
+                },
+                {
+                    varmegye: "Nógrád",
+                    szekhely: "Salgótarján",
+                    orszagresz: "Észak-Magyarország",
+                    regio: "AF",
+                    terulet: 131,
+                    nepesseg: 189304,
+                    nepsuruseg: 2544,
+                    varosok: 74
+                },
+                {
+                    varmegye: "Pest",
+                    szekhely: "Budapest",
+                    orszagresz: "Közép-Magyarország",
+                    regio: "KM",
+                    terulet: 187,
+                    nepesseg: 1278874,
+                    nepsuruseg: 6390,
+                    varosok: 200
+                },
+                {
+                    varmegye: "Somogy",
+                    szekhely: "Kaposvár",
+                    orszagresz: "Dél-Dunántúl",
+                    regio: "DT",
+                    terulet: 246,
+                    nepesseg: 301429,
+                    nepsuruseg: 6065,
+                    varosok: 49
+                },
+                {
+                    varmegye: "Szabolcs-Szatmár-Bereg",
+                    szekhely: "Nyíregyháza",
+                    orszagresz: "Észak-Alföld",
+                    regio: "AF",
+                    terulet: 229,
+                    nepesseg: 552964,
+                    nepsuruseg: 5933,
+                    varosok: 93
+                },
+                {
+                    varmegye: "Tolna",
+                    szekhely: "Szekszárd",
+                    orszagresz: "Dél-Dunántúl",
+                    regio: "DT",
+                    terulet: 109,
+                    nepesseg: 217463,
+                    nepsuruseg: 3703,
+                    varosok: 58
+                },
+                {
+                    varmegye: "Vas",
+                    szekhely: "Szombathely",
+                    orszagresz: "Nyugat-Dunántúl",
+                    regio: "DT",
+                    terulet: 216,
+                    nepesseg: 253551,
+                    nepsuruseg: 3336,
+                    varosok: 76
+                },
+                {
+                    varmegye: "Veszprém",
+                    szekhely: "Veszprém",
+                    orszagresz: "Közép-Dunántúl",
+                    regio: "DT",
+                    terulet: 217,
+                    nepesseg: 341317,
+                    nepsuruseg: 4463,
+                    varosok: 76
+                },
+                {
+                    varmegye: "Zala",
+                    szekhely: "Zalaegerszeg",
+                    orszagresz: "Nyugat-Dunántúl",
+                    regio: "DT",
+                    terulet: 258,
+                    nepesseg: 268648,
+                    nepsuruseg: 3784,
+                    varosok: 71
+                },
+                {
+                    varmegye: "Budapest (főváros)",
+                    szekhely: "–",
+                    orszagresz: "Közép-Magyarország",
+                    regio: "KM",
+                    terulet: 23,
+                    nepesseg: 1752286,
+                    nepsuruseg: 3337,
+                    varosok: 3
+                }
+            ];
+
+            let tabla = document.createElement("table");
+
+            let fejlec = document.createElement("tr");
+            let fejlecek = ["Vármegye", "Székhely", "Országrész", "Régió", "Terület", "Népesség", "Népsűrűség", "Városok"];
+            fejlecek.forEach(szoveg => {
+                let th = document.createElement("th");
+                th.textContent = szoveg;
+                fejlec.appendChild(th);
+            });
+            tabla.appendChild(fejlec);
+
+            varmegyek.forEach(sor => {
+                let tr = document.createElement("tr");
+
+                let tdVarmegye = document.createElement("td");
+                tdVarmegye.textContent = sor.varmegye;
+                tr.appendChild(tdVarmegye);
+
+                let tdSzekhely = document.createElement("td");
+                tdSzekhely.textContent = sor.szekhely;
+                tr.appendChild(tdSzekhely);
+
+                let tdOrszagresz = document.createElement("td");
+                tdOrszagresz.textContent = sor.orszagresz;
+                tr.appendChild(tdOrszagresz);
+
+                let tdRegio = document.createElement("td");
+                tdRegio.textContent = sor.regio;
+                tr.appendChild(tdRegio);
+
+                let tdTerulet = document.createElement("td");
+                tdTerulet.textContent = sor.terulet;
+                tr.appendChild(tdTerulet);
+
+                let tdNepesseg = document.createElement("td");
+                tdNepesseg.textContent = sor.nepesseg;
+                tr.appendChild(tdNepesseg);
+
+                let tdNepsuruseg = document.createElement("td");
+                tdNepsuruseg.textContent = sor.nepsuruseg;
+                tr.appendChild(tdNepsuruseg);
+
+                let tdVarosok = document.createElement("td");
+                tdVarosok.textContent = sor.varosok;
+                tr.appendChild(tdVarosok);
+
+                tabla.appendChild(tr);
+            });
+
+            document.getElementById("tablaHely").innerHTML = "";
+            document.getElementById("tablaHely").appendChild(tabla);
+        }
+
+        function sotetMod() {
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
+        }
+
+        function vilagosMod() {
+            document.body.style.backgroundColor = "";
+            document.body.style.color = "";
+        }
+    </script>
+</body>
+
+</html>
