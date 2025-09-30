@@ -1,0 +1,50 @@
+let kepek = [
+    {
+        lapNev: 'sajtburger',
+        eleres: 'memoriaKepek/sajtburger.png'
+    },
+    {
+        lapNev: 'sajtburger',
+        eleres: 'memoriaKepek/sajtburger.png'
+    },
+    {
+        lapNev: 'hotdog',
+        eleres: 'memoriaKepek/hotdog.png'
+    },
+    {
+        lapNev: 'hotdog',
+        eleres: 'memoriaKepek/hotdog.png'
+    },
+    {
+        lapNev: 'jegkrem',
+        eleres: 'memoriaKepek/jegkrem.png'
+    },
+    {
+        lapNev: 'jegkrem',
+        eleres: 'memoriaKepek/jegkrem.png'
+    },
+    {
+        lapNev: 'krumpli',
+        eleres: 'memoriaKepek/krumpli.png'
+    },
+    {
+        lapNev: 'krumpli',
+        eleres: 'memoriaKepek/krumpli.png'
+    },
+    {
+        lapNev: 'pizza',
+        eleres: 'memoriaKepek/pizza.png'
+    },
+    {
+        lapNev: 'pizza',
+        eleres: 'memoriaKepek/pizza.png'
+    },
+    {
+        lapNev: 'shake',
+        eleres: 'memoriaKepek/shake.png'
+    },
+    {
+        lapNev: 'shake',
+        eleres: 'memoriaKepek/shake.png'
+    }
+];

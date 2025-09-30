@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memória Játék</title>
+</head>
+
+<style>
+    body {
+        background-color: aliceblue;
+    }
+
+    #cimsor {
+        background-color: lightgrey;
+    }
+
+    h1 {
+        font-size: 50px;
+        padding: 15px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-align: center;
+    }
+
+    #pontszam {
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 30px;
+    }
+
+    .container {
+        display: flex;
+        gap: 2em;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .kepek {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+</style>
+
+<body>
+    <footer id="cimsor">
+        <h1>Memória Játék</h1>
+    </footer>
+
+    <div id="pontszam">
+        <p>Párok: 0/6</p>
+    </div>
+
+    <div class="container">
+        <div class="kepek">
+            <img src="./memoriaKepek/blank.png" alt="">
+            <img src="./memoriaKepek/blank.png" alt="">
+            <img src="./memoriaKepek/blank.png" alt="">
+        </div>
+
+        <div class="kepek">
+            <img src="./memoriaKepek/blank.png" alt="">
+            <img src="./memoriaKepek/blank.png" alt="">
+            <img src="./memoriaKepek/blank.png" alt="">
+        </div>
+
+        <div class="kepek">
+            <img src="./memoriaKepek/blank.png" alt="">
+            <img src="./memoriaKepek/blank.png" alt="">
+            <img src="./memoriaKepek/blank.png" alt="">
+        </div>
+
+        <div class="kepek">
+            <img src="./memoriaKepek/blank.png" alt="">
+            <img src="./memoriaKepek/blank.png" alt="">
+            <img src="./memoriaKepek/blank.png" alt="">
+        </div>
+    </div>
+
+    <script>
+        let kepek = [
+            {
+                lapNev: 'sajtburger',
+                eleres: 'memoriaKepek/sajtburger.png'
+            },
+            {
+                lapNev: 'sajtburger',
+                eleres: 'memoriaKepek/sajtburger.png'
+            },
+            {
+                lapNev: 'hotdog',
+                eleres: 'memoriaKepek/hotdog.png'
+            },
+            {
+                lapNev: 'hotdog',
+                eleres: 'memoriaKepek/hotdog.png'
+            },
+            {
+                lapNev: 'jegkrem',
+                eleres: 'memoriaKepek/jegkrem.png'
+            },
+            {
+                lapNev: 'jegkrem',
+                eleres: 'memoriaKepek/jegkrem.png'
+            },
+            {
+                lapNev: 'krumpli',
+                eleres: 'memoriaKepek/krumpli.png'
+            },
+            {
+                lapNev: 'krumpli',
+                eleres: 'memoriaKepek/krumpli.png'
+            },
+            {
+                lapNev: 'pizza',
+                eleres: 'memoriaKepek/pizza.png'
+            },
+            {
+                lapNev: 'pizza',
+                eleres: 'memoriaKepek/pizza.png'
+            },
+            {
+                lapNev: 'shake',
+                eleres: 'memoriaKepek/shake.png'
+            },
+            {
+                lapNev: 'shake',
+                eleres: 'memoriaKepek/shake.png'
+            }
+        ];
+
+        let img = document.getElementsByTagName("img");
+        
+        document.addEventListener("DOMContentLoaded", function (){
+             
+        });
+
+        </script>
+</body>
+
+</html>
